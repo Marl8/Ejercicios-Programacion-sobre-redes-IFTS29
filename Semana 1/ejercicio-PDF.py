@@ -1,3 +1,5 @@
+# Biblioteca threading -> https://docs.python.org/es/3.14/library/threading.html
+
 import threading
 import time
 
