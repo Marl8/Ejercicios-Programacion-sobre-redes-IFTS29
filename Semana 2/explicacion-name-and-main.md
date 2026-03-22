@@ -1,4 +1,4 @@
-## Que es el __name__ == "__main__"?
+## Que es el __name__ == "__main__" En Python?
 
 
 Esta es una de las dudas más comunes en Python porque tiene que ver con cómo el lenguaje "lee" tus archivos y cómo el sistema operativo gestiona la memoria.
@@ -56,7 +56,7 @@ Esto es lo que sucede paso a paso:
 
 - **Resultado:** En milisegundos, tu computadora intenta abrir cientos de procesos de Python hasta que se congela o se agota la RAM.
 
-4. La solución: El muro de contención
+### 4. La solución: El muro de contención
 
 Al poner ``if __name__ == "__main__":``, creas una barrera:
 
