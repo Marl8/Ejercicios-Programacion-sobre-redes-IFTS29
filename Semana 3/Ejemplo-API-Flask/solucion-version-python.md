@@ -45,7 +45,13 @@ python3.14 -m venv venv
 **2.** Activar:
 
 ````bash
-source venv/bin/activate
+source venv/Scripts/activate
+````
+
+**3.** Ver versión de Python:
+
+````bash
+python --version
 ````
 
 **3.** Instalar cosas:
