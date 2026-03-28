@@ -1,3 +1,18 @@
+'''
+Problema 1: contando en paralelo
+
+Escribe un programa en Python que cree dos hilos. 
+
+El primer hilo debe contar los números del 1 al 5, 
+
+mientras que el segundo hilo debe contar los números del 6 al 10. 
+
+Los números de cada hilo deben imprimirse de forma concurrente, 
+
+pero no necesariamente en el mismo orden.
+'''
+
+
 import threading
 import time
 
