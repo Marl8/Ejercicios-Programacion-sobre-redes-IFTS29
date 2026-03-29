@@ -14,10 +14,10 @@ impriman una vez que ambos hilos hayan terminado su tarea.
 
 
 import threading
-import time
 
 hilos_terminados = 0
 condicion = threading.Condition() # Generamos la condición
+resultados = []
 
 def contar_numeros_hilo(nombre):
     
@@ -26,16 +26,15 @@ def contar_numeros_hilo(nombre):
     suma_total = 0
     
     for i in range(1, 6):
-        time.sleep(1)  # Simula un trabajo que toma tiempo (1 segundo por número)
         suma_total += i
-        print(f"{nombre} sumando: {i} (Total parcial: {suma_total})")
+        # print(f"{nombre} sumando: {i} (Total parcial: {suma_total})")
     
     # Al terminar, usamos la condición para avisar
     with condicion:
         hilos_terminados += 1
-        print(f"--- {nombre} finalizó con un total de: {suma_total} ---")
+        resultados.append(f"--- {nombre} finalizó con un total de: {suma_total} ---")
         # Notificamos a quien esté esperando (el hilo principal)
-        condicion.notify()    
+        condicion.notify_all()    
 
 # El metodo estático Thread recibe como ARG dos parámetros con la (,) le decimos que el segundo param está vacio       
 hilo1 = threading.Thread(target=contar_numeros_hilo, args=("Hilo 1",))
@@ -44,11 +43,16 @@ hilo2 = threading.Thread(target=contar_numeros_hilo, args=("Hilo 2",))
 hilo1.start()
 hilo2.start()
 
-# El hilo principal espera aquí
-with condicion:
-    while hilos_terminados < 2:
-        condicion.wait()  # Se bloquea hasta recibir un notify()
+def imprimirResultados():
+    # El hilo principal espera aquí
+    with condicion:
+        while hilos_terminados < 2:
+            condicion.wait()  # Se bloquea hasta recibir un notify()
 
+    for result in resultados:
+        print(result)
+        
+imprimirResultados()        
 print("¡Contador completo!")        
 
 
