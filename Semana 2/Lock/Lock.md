@@ -69,5 +69,5 @@ else:
 
 ### 5. Diferencias Cruciales con Conditions
 
-![Diferencias](./Imagines/lock2.png)
+![Diferencias](../Imagines/lock2.png)
 
