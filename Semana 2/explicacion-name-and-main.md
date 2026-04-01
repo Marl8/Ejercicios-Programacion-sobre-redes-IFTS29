@@ -30,7 +30,6 @@ Dependiendo de tu sistema operativo, la creación de un proceso funciona distint
 Imagina que tienes este código SIN el ``if __name__ == "__main__":`` en Windows:
 
 ````Python
-
 import multiprocessing
 
 def tarea():
@@ -39,7 +38,6 @@ def tarea():
 # ESTO VA A FALLAR
 p1 = multiprocessing.Process(target=tarea)
 p1.start()
-
 ````
 
 Esto es lo que sucede paso a paso:

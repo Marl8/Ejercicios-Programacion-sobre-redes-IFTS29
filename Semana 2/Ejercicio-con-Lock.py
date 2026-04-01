@@ -10,7 +10,6 @@ ocurre una condición de carrera (race condition) y los datos se corrompen.
 El Lock asegura que solo un hilo a la vez ejecute una sección crítica de código.
 '''
 
-
 import threading
 import time
 
