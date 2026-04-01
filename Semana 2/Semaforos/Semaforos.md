@@ -23,15 +23,6 @@ Un semáforo gestiona un contador interno que cambia según dos operaciones prin
 
 ![Tipos semáforos](../Imagines/semaforo1.png)
 
-4. Diferencia clave con un Lock
-
-- ***Lock:*** Solo un hilo tiene la llave. Si el Hilo A cierra el candado, el Hilo B no puede abrirlo.
-
-- ***Semaphore:*** Es un contador de permisos. No importa qué hilo adquirió el permiso; cualquier hilo puede liberar un espacio (aunque por buena práctica debe ser el mismo que lo usó).
-
-**Nota de seguridad:** Se recomienda usar siempre ``BoundedSemaphore`` a menos que tengas una razón muy específica para permitir que el contador crezca indefinidamente, ya que ayuda a detectar errores de lógica donde olvidas un acquire pero ejecutas un ``release``.
-
-
 ### 3. cómo funciona el contador del semáforo
 
 #### 3.1. Un solo contador para gobernarlos a todos
@@ -65,3 +56,12 @@ El contador no se reinicia automáticamente (no vuelve a 3 por arte de magia). S
 - Inmediatamente, el semáforo ve que hay hilos en la "lista de espera" (el Hilo D).
 
 - El semáforo le entrega ese "1" al Hilo D, el contador vuelve a ser 0, y el Hilo D se despierta para trabajar    
+
+
+### 4. Diferencia clave con un Lock
+
+- ***Lock:*** Solo un hilo tiene la llave. Si el Hilo A cierra el candado, el Hilo B no puede abrirlo.
+
+- ***Semaphore:*** Es un contador de permisos. No importa qué hilo adquirió el permiso, cualquier hilo puede liberar un espacio (aunque por buena práctica debe ser el mismo que lo usó).
+
+**Nota de seguridad:** Se recomienda usar siempre ``BoundedSemaphore`` a menos que tengas una razón muy específica para permitir que el contador crezca indefinidamente, ya que ayuda a detectar errores de lógica donde olvidas un acquire pero ejecutas un ``release``.
