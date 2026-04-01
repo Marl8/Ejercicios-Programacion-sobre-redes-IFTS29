@@ -21,7 +21,7 @@ Un semáforo gestiona un contador interno que cambia según dos operaciones prin
 
 ### 2. Tipos de Semáforos en threading
 
-![Tipos semáforos](./Imagines/semaforo1.png)
+![Tipos semáforos](../Imagines/semaforo1.png)
 
 4. Diferencia clave con un Lock
 
