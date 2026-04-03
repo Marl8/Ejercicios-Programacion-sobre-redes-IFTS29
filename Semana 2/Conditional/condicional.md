@@ -21,6 +21,7 @@ El flujo básico:
 ![Diferencias con Lock](../Imagines/conditional1.png)
 
 
+
 ### 3. Ejemplo Práctico: El Comensal y el Cocinero
 
 Imagina que un cliente no puede comer si el plato está vacío. Un Lock solo evitaría que ambos toquen el plato a la vez, pero el cliente se quedaría "bloqueado" intentando comer aunque no hubiera nada. Con Condition, el cliente espera sentado (sin gastar recursos) hasta que el cocinero le avise.
