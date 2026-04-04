@@ -1,6 +1,4 @@
 '''
-Tú dijiste
-
 Dado el siguiente bloque de código,¿ que otras buenas practicas de programación podríamos sumar (sin perder perfomance)?
 
 import threading
