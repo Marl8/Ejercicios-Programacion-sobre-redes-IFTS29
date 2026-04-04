@@ -6,7 +6,7 @@ Cuando usas hilos (threads), todos comparten la misma memoria. Si dos hilos inte
 
 ### 2. Estados y Métodos Principales
 
-![Estados Lock](./Imagines/lock1.png)
+![Estados Lock](../Imagines/lock1.png)
 
 
 ### 3. Implementación en Código
