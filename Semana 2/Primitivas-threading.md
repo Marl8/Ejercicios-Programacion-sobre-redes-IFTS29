@@ -35,7 +35,7 @@ Funciona como una señal de comunicación simple. Un hilo espera a que ocurra al
 
 - Uso principal: Notificar a otros hilos que una tarea específica ha terminado o que pueden comenzar a trabajar.
 
-#### 5. Condition (Condición)
+### 5. Condition (Condición)
 
 Es una primitiva más avanzada que combina un Lock con la capacidad de esperar a que ocurra un cambio específico en el estado del programa.
 

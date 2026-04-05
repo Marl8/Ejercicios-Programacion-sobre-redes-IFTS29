@@ -47,7 +47,7 @@ class Nodo:
     def __init__(self, nombre):
         self.nombre = nombre
         self.archivos = {} # Diccionario donde se guardan los archivos
-        self.vecinos = []  # Array de Otros servidores conectados
+        self.servidores = []  # Array de Otros servidores conectados
 
     def guardar(self, nombre_archivo, contenido):
         # 1. Guarda en sí mismo
@@ -55,8 +55,8 @@ class Nodo:
         print()
         print(f"[{self.nombre}] Archivo '{nombre_archivo}' guardado.")
         
-        # 2. Copia automática a los vecinos (Sincronización)
-        for v in self.vecinos:
+        # 2. Copia automática a los servidores (Sincronización)
+        for v in self.servidores:
             v.archivos[nombre_archivo] = contenido
             print(f" -> Copia enviada a {v.nombre}")
 
@@ -72,7 +72,7 @@ s2 = Nodo("Servidor_B")
 s3 = Nodo("Servidor_C")
 
 # Los conectamos entre sí
-s1.vecinos = [s2, s3]
+s1.servidores = [s2, s3]
 
 # Usuario sube un archivo al Servidor A
 s1.guardar("foto.jpg", "Contenido binario de la imagen")
