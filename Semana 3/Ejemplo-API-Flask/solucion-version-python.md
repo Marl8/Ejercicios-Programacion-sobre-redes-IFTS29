@@ -42,6 +42,11 @@ O Opción 2: Crear un entorno Virtual
 python3.14 -m venv venv
 ````
 
+### Venv
+
+![Venv](../../Semana%202/Imagines/venv.png)
+
+
 **2.** Activar:
 
 ````bash
@@ -65,7 +70,7 @@ pip install flask
 ````bash
 deactivate
 ````
-Crear un archivo tipo ``Package.json`` el Javascript con toas las dependencias instaladas
+Crear un archivo tipo ``Package.json`` el Javascript con todas las dependencias instaladas
 
 ````bash
 pip freeze > requirements.txt
