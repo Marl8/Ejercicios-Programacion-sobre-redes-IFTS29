@@ -4,7 +4,7 @@ Entender cómo se gestionan los File Descriptors (FD) cuando mezclamos sockets, 
 
 ### 1. El Socket y el File Descriptor (FD)
 
-En sistemas tipo Unix (Linux/macOS), todo es un archivo. Cuando creas un socket en Python con socket.socket(), el Sistema Operativo (SO) te devuelve un número entero pequeño llamado File Descriptor.
+En sistemas tipo Unix (Linux/macOS), todo es un archivo. Cuando creas un socket en Python con ``socket.socket()``, el Sistema Operativo (SO) te devuelve un número entero pequeño llamado File Descriptor.
 
 - Este FD es el índice en una tabla que apunta a una estructura de datos en el kernel.
 
