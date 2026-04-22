@@ -22,7 +22,7 @@ Cuando usas la librería threading, todos los hilos comparten el mismo espacio d
 
 - ``Nuevo FD``: Cada vez que un cliente se conecta, el SO genera un nuevo File Descriptor (FD 4, FD 5, etc.) para esa conexión específica. El puerto de origen del servidor sigue siendo el mismo, pero el FD es único.
 
-- ``Delegación``: Pasas el objeto conn (que contiene el FD) a un nuevo hilo: t``hreading.Thread(target=handler, args=(conn,)).start()``.
+- ``Delegación``: Pasas el objeto conn (que contiene el FD) a un nuevo hilo: ``threading.Thread(target=handler, args=(conn,)).start()``.
 
 #### El problema de los hilos:
 
@@ -77,7 +77,7 @@ La línea de tiempo del bloqueo
     - ¿Qué pasa con el FD? El FD sigue ocupado y asignado a ese hilo. El SO sabe que ese hilo está "interesado" en lo que pase en ese número de archivo.
 
 #### 4.4. El Procesamiento y Cierre:
-    
+
 Una vez que llegan los datos, el hilo se despierta, trabaja y finalmente ejecuta ``conn.close()``.
 
 - **Liberación:** En ese instante, el SO borra la entrada en la tabla de File Descriptors y el número (ej. el FD 5) queda disponible para ser usado por otra conexión nueva.

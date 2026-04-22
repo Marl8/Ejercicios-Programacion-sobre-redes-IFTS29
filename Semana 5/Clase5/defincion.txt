@@ -1,0 +1,33 @@
+Característica	        Socket	                             API REST
+Comunicación	Bidireccional (full-duplex) 	Unidireccional (request-response)
+Persistencia	Conexión abierta	            Conexión por cada petición
+Tiempo real	    Sí	                                No (o simulado)
+Complejidad	    Alta	                                Baja
+Protocolo	    TCP/WebSocket	                        HTTP
+
+
+
+Sockets --> TCP (SSH)
+        --> UDP (Tiempo real)
+
+
+
+ Hilos (Threading):
+        accept() te da el nuevo socket.
+
+        Lanzás un hilo y le das ese socket.
+
+        El hilo se bloquea en conn.recv(). Mientras tanto, el hilo principal vuelve a accept() para atender al siguiente.
+
+        Cuando el hilo termina de imprimir y hacer el sleep, usa el socket exclusivo para sendall() y lo cierra.
+
+
+
+Asincrónico (AsyncIO):
+        accept() ocurre dentro del Event Loop.
+
+        En lugar de un hilo, se crea una "tarea" (corrutina).
+
+        El servidor dice: "Voy a leer del Socket B, pero mientras el cliente no mande nada, sigo atendiendo otros accept()".
+
+        Es como un mozo que toma el pedido y, mientras la cocina (I/O) trabaja, atiende otra mesa en lugar de quedarse parado esperando.
