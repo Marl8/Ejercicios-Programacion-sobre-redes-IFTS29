@@ -14,6 +14,8 @@ def create_user_service(data):
 
 def get_users_service():
     users = get_all_users()
+    
+    # Tranformar con VARS la lista de objetos en un diccionario para luego poder convertirlo a JSON 
     return [vars(u) for u in users]
 
 def get_user_service(user_id):
