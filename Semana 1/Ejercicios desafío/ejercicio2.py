@@ -36,7 +36,7 @@ def contar_numeros_hilo(nombre):
         # Notificamos a quien esté esperando (el hilo principal)
         condicion.notify_all()    
 
-# El metodo estático Thread recibe como ARG dos parámetros con la (,) le decimos que el segundo param está vacio       
+# El metodo estático Thread recibe como ARG una lista o tupla de parámetros con la (,) le decimos que el segundo param está vacio       
 hilo1 = threading.Thread(target=contar_numeros_hilo, args=("Hilo 1",))
 hilo2 = threading.Thread(target=contar_numeros_hilo, args=("Hilo 2",))
 
