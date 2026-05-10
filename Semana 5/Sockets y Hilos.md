@@ -18,7 +18,7 @@ Cuando usas la librería threading, todos los hilos comparten el mismo espacio d
 
 - ``Socket de Escucha``: Creas un socket principal (FD 3, por ejemplo) que hace bind al puerto y listen.
 
-- El ``Bucle accept()``: Corres un bucle que llama a conn, addr = server_socket.``accept()``.
+- El ``Bucle accept()``: Corres un bucle que llama a ``conn, addr = server_socket.accept()``.
 
 - ``Nuevo FD``: Cada vez que un cliente se conecta, el SO genera un nuevo File Descriptor (FD 4, FD 5, etc.) para esa conexión específica. El puerto de origen del servidor sigue siendo el mismo, pero el FD es único.
 
